@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sushi/mainview.dart';
 
 class Landingview extends StatefulWidget {
   const Landingview({super.key});
@@ -35,16 +36,22 @@ class _LandingviewState extends State<Landingview> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Container(
-                          alignment: Alignment.center,
-                          height: 60,
-                          width: 60,
-                          decoration: BoxDecoration(
-                              color: Color(0xff1A1A1D),
-                              borderRadius: BorderRadius.circular(30)),
-                          child: Icon(
-                            Icons.arrow_back_ios,
-                            color: Colors.white,
+                        GestureDetector(
+                          onTap: (){
+                            Navigator.pop(context,
+                                MaterialPageRoute(builder: (context) => Mainview()));
+                          },
+                          child: Container(
+                            alignment: Alignment.center,
+                            height: 60,
+                            width: 60,
+                            decoration: BoxDecoration(
+                                color: Color(0xff1A1A1D),
+                                borderRadius: BorderRadius.circular(30)),
+                            child: Icon(
+                              Icons.arrow_back_ios,
+                              color: Colors.white,
+                            ),
                           ),
                         ),
                         SizedBox(
